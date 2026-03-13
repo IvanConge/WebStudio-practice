@@ -12,6 +12,7 @@
   --light: #f4f4fd;
   --modal-overlay: #2e2f42;
   --hero-background: #2e2f42;
+  --linear-gradient: rgba(46, 47, 66, 0.7);
   --white-background: #ffffff;
   --modal-background: #fcfcfc;
 }
@@ -26,14 +27,9 @@ h6 {
   margin: 0;
 }
 
-ul,
-ol {
+ul {
   margin: 0;
   padding: 0;
-}
-
-img {
-  display: block;
 }
 
 body {
@@ -68,6 +64,7 @@ body {
   font-size: 36px;
   line-height: 40px;
   letter-spacing: 0.72px;
+  margin-bottom: 72px;
 }
 
 .logo {
@@ -87,6 +84,27 @@ body {
   letter-spacing: 0.4px;
 }
 /* ========== Header ========== */
+.header__container {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.header__list {
+  display: flex;
+  gap: 40px;
+  margin-left: 76px;
+}
+
+.header__address {
+  margin-left: auto;
+}
+
+.header__address-list {
+  display: flex;
+  gap: 40px;
+}
+
 .header__logo > span {
   color: var(--dark);
 }
@@ -96,6 +114,10 @@ body {
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0.32px;
+}
+
+.header__link:hover {
+  color: var(--primary-brand);
 }
 
 .header__address-link {
@@ -111,7 +133,12 @@ body {
 }
 /* ========== Hero ========== */
 .hero {
-  background-color: var(--hero-background);
+  background-image:
+    linear-gradient(var(--linear-gradient), var(--linear-gradient)),
+    url(../images/hero-image-pc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--linear-gradient);
   padding: 188px 0;
 }
 
@@ -121,10 +148,12 @@ body {
   font-size: 56px;
   line-height: 60px;
   letter-spacing: 1.12px;
+  margin-bottom: 48px;
 }
 
 .hero__btn {
-  align-self: center;
+  display: block;
+  margin: 0 auto;
   background-color: var(--primary-brand);
   color: var(--light);
   font-family: var(--roboto);
@@ -143,12 +172,94 @@ body {
   background-color: var(--pressed-state);
   cursor: pointer;
 }
+/* ========== About ========== */
+.about {
+  padding-bottom: 0;
+}
+.about__list {
+  display: flex;
+  gap: 24px;
+}
+.about__item-title {
+  margin-bottom: 8px;
+}
+
+/* ========== Service ========== */
+.service__list {
+  display: flex;
+  gap: 24px;
+}
+/* ========== Team ========== */
+.team {
+  background-color: var(--light);
+}
+
+.team__list {
+  display: flex;
+  gap: 24px;
+}
+
+.team__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 4px 4px;
+  box-shadow:
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 2px 1px 0 rgba(46, 47, 66, 0.08);
+  background-color: var(--white-background);
+}
+
+.team__name {
+  margin: 32px 0 8px;
+}
+.team__role {
+  margin-bottom: 8px;
+}
+
+.team__social-list {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.team__social-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+}
+
+.team__social-link {
+  color: var(--light);
+  background-color: var(--primary-brand);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.team__social-link:hover {
+  background-color: var(--pressed-state);
+}
+
+.team__social-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
 /* ========== Footer ========== */
 .footer {
+  padding: 100px 0;
   background-color: var(--hero-background);
   color: var(--light);
 }
 
+.footer__text {
+  margin-top: 16px;
+}
 .footer__logo > span {
   color: var(--light);
 }
